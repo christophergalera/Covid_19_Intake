@@ -27,7 +27,7 @@ const NewCovid = (props) => {
       .then((res) => {
         console.log(res.data);
 
-        // tell the server that we successfully created a new hero!
+        // tell the server that we successfully created a new Resident!
         socket.emit("added_covid", res.data);
         
         // make sure you clean up after yourself - do NOT leave a socket connected

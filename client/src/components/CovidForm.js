@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
-import HeroDetails from './HeroDetails';
+import CovidDetails from './CovidDetails';
 
 const CovidForm = (props) => {
   const { submitHandler, errors, covid, setCovid, buttonLabel } = props;
@@ -139,7 +139,7 @@ const CovidForm = (props) => {
             />
         </div>
         <button>{ buttonLabel }</button>
-        {/* <button className="cancelBtn" onClick={() => navigate('/heroes')}>Cancel</button> */}
+        {/* <button className="cancelBtn" onClick={() => navigate('/covid')}>Cancel</button> */}
         <button className="cancelBtn" onClick={() => navigate( -1 )}>Cancel</button>
       </form>
     </div>
