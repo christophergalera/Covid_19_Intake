@@ -9,24 +9,24 @@ const CovidSchema = new mongoose.Schema({
         type: String,
         required: [true, "This is a required field."],
     }, 
-    Address: {
+    address: {
         type: String,
         required: [true, "This is a required field!"]
     },
-    DateOfBirth: {
+    dateOfBirth: {
         type: Date, 
         // new date means today 
         max: [new Date(), "Your DOB cannot be today."],
     },
-    PhoneNumber: {
+    phoneNumber: {
         type: String,
         required: [true, "This is a required field!"]
     },
-    EssentialWorker: {
+    essentialWorker: {
         type: Boolean,
         default: true
     },
-    DescribeEssentialWork: {
+    describeEssentialWork: {
         type: String,
         enum: [
             'Military',
@@ -34,7 +34,7 @@ const CovidSchema = new mongoose.Schema({
             'Resturant Worker'
         ],
     },
-    Disablity: {
+    disablity: {
         type: Boolean,
         default: true
     },
