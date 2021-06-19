@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link, navigate } from '@reach/router';
 import HeroDetails from './HeroDetails';
 
-const HeroForm = (props) => {
+const CovidForm = (props) => {
   const { submitHandler, errors, covid, setCovid, buttonLabel } = props;
 
   const describeEssentialWork = [ "Military", "Healthcare Worker","Resturant Worker" ];
@@ -146,4 +146,4 @@ const HeroForm = (props) => {
   )
 }
 
-export default HeroForm;
+export default CovidForm;

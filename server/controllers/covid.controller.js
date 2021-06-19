@@ -30,9 +30,9 @@ module.exports = {
     create: (req, res) => {
         console.log(req.body); //this will print the json object that we want to add to the DB
         Covid.create(req.body)
-            .then((newHero) => {
+            .then((newCovid) => {
                 console.log("In Create");
-                res.json(newHero);
+                res.json(newCovid);
             })
             .catch((err) => {
                 console.log("Error within create");
