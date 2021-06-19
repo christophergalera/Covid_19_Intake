@@ -130,7 +130,7 @@ const CovidForm = (props) => {
           </select>
         </div>
         <div>
-          <label>Disablity </label>
+          <label>Disability </label>
           <input 
             type="text"
             name="disability"
