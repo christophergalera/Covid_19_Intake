@@ -46,9 +46,9 @@ module.exports = {
             new: true, 
             runValidators: true, //validators do not work by default, need to set to True
         })
-            .then((updatedHero) => {
+            .then((updatedCovid) => {
                 console.log("In Update");
-                res.json(updatedHero);
+                res.json(updatedCovid);
             })
             .catch((err) => {
                 console.log("Error within update");
