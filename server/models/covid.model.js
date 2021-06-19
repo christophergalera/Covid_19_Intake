@@ -34,7 +34,7 @@ const CovidSchema = new mongoose.Schema({
             'Resturant Worker'
         ],
     },
-    disablity: {
+    disability: {
         type: Boolean,
         default: true
     },

@@ -27,7 +27,7 @@ const CovidDetails = (props) => {
             <p>Phone Number: {covid.phoneNumber}</p>
             <p>Essential Worker: {covid.essentialWorker}</p>
             <p>Describe Essential Work: {covid.describeEssentialWork}</p>
-            <p>Disability: {covid.disablity}</p>
+            <p>Disability: {covid.disability}</p>
         </div>
     )
 }

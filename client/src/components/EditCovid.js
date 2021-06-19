@@ -14,7 +14,7 @@ const EditCovid = (props) => {
         phoneNumber: "",
         essentialWorker: "",
         describeEssentialWork: "",
-        disablity: "",
+        disability: "",
     });
 
   const [ errors, setErrors ] = useState({});

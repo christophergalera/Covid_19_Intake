@@ -14,9 +14,9 @@ const NewCovid = (props) => {
     address: "",
     dateOfBirth: "",
     phoneNumber: "",
-    essentialWorker: true,
+    essentialWorker: "",
     describeEssentialWork: "",
-    disablity: false,
+    disability: "",
   })
   const [ errors, setErrors ] = useState({});
 

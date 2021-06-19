@@ -96,7 +96,7 @@ const AllCovid = (props) => {
             allCovid.map(( covid, index ) => (
               <tr key={ index }>
                 <td>
-                  <Link to={"/covid/" + covid._id }>{ covid.name }</Link>
+                  <Link to={"/covid/" + covid._id }>{covid.lastName + ", " + covid.firstName}</Link>
                 </td>
                 <td>
                   <button className="editBtn" onClick={() => navigate('/covid/' + covid._id + '/edit')}>Edit</button>
