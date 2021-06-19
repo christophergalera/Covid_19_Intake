@@ -17,9 +17,9 @@ module.exports = {
     getOne: (req, res) => {
         console.log("getOne ID: " + req.params.id);
         Covid.findById(req.params.id)
-            .then((oneHero) => {
+            .then((oneCovid) => {
                 console.log("In getOne");
-                res.json(oneHero);
+                res.json(oneCovid);
             }) 
             .catch((err) => {
                 console.log("Error within getOne");
