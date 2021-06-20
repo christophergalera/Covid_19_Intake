@@ -1,12 +1,18 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const socketio = require('socket.io');
-const port = 8000;
+const cookieParser = require('cookie-parser');
+const port = process.env.MY_PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: "http://localhost:3000"
+}));
+app.use(cookieParser());
 
 // mongoose config setup
 // this is the equivalent of running the code from that file right here!
@@ -16,8 +22,9 @@ require('./config/mongoose.config');
 // import what was exported, and then invoke that function with app as the argument
 //    to the returned / imported / required function
 require('./routes/covid.routes')(app);
+require('./routes/user.routes')(app);
 
-const server = app.listen(port, () => console.log("your server is running for covid data!"));
+const server = app.listen(port, () => console.log("your server is running for covid intake!"));
 
 const io = socketio(server, {
   cors: {
@@ -42,7 +49,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on("deleted_covid", (data) => {
-    console.log("covid deleted - covid ID: " + data);
+    console.log("hero covid - covid ID: " + data);
     socket.broadcast.emit("covid_deleted", data);
   })
 
