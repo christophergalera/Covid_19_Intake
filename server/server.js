@@ -49,7 +49,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on("deleted_covid", (data) => {
-    console.log("hero covid - covid ID: " + data);
+    console.log("covid covid - covid ID: " + data);
     socket.broadcast.emit("covid_deleted", data);
   })
 
