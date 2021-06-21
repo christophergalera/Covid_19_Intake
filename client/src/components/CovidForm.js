@@ -6,7 +6,9 @@ import CovidDetails from './CovidDetails';
 const CovidForm = (props) => {
   const { submitHandler, errors, covid, setCovid, buttonLabel } = props;
 
-  const describeEssentialWork = [ "Military", "Healthcare Worker","Resturant Worker" ];
+  const describeEssentialWork = [ "", "Military", "Healthcare Worker","Resturant Worker", "Other"];
+  const essentialWorker = ["", "Yes", "No"];
+  const disability = ["", "Yes", "No"];
 
   const inputChange = (e) => {
     // console.log("input name: " + e.target.name);
@@ -108,17 +110,24 @@ const CovidForm = (props) => {
         </div>
         <div>
           <label>Essential Worker </label>
-          <input 
-            type="text"
+          <select
             name="essentialWorker"
+            defaultValue= ""
             value={ covid.essentialWorker }
             onChange={ (e) => inputChange(e) }
-            />
+            >
+            {
+              essentialWorker.map((essentialWorker, index) => (
+                <option value={essentialWorker} key={index}>{essentialWorker}</option>
+              ))
+            }
+          </select>
         </div>
         <div>
           <label>Describe Essential Work</label>
           <select
             name="describeEssentialWork"
+            defaultValue= ""
             value={ covid.describeEssentialWork }
             onChange={ (e) => inputChange(e) }
             >
@@ -131,12 +140,18 @@ const CovidForm = (props) => {
         </div>
         <div>
           <label>Disability </label>
-          <input 
-            type="text"
+          <select
             name="disability"
+            defaultValue= ""
             value={ covid.disability }
             onChange={ (e) => inputChange(e) }
-            />
+            >
+            {
+              disability.map((disability, index) => (
+                <option value={disability} key={index}>{disability}</option>
+              ))
+            }
+          </select>
         </div>
         <button>{ buttonLabel }</button>
         {/* <button className="cancelBtn" onClick={() => navigate('/covid')}>Cancel</button> */}

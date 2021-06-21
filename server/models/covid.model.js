@@ -23,20 +23,29 @@ const CovidSchema = new mongoose.Schema({
         required: [true, "This is a required field!"]
     },
     essentialWorker: {
-        type: Boolean,
-        default: true
+        type: String,
+        default: 'Yes',
+        enum: [
+            'Yes',
+            'No',
+        ],
     },
     describeEssentialWork: {
         type: String,
         enum: [
             'Military',
             'Healthcare Worker',
-            'Resturant Worker'
+            'Resturant Worker',
+            'Other',
         ],
     },
     disability: {
-        type: Boolean,
-        default: true
+        type: String,
+        default: 'No',
+        enum: [
+            'Yes',
+            'No',
+        ],
     },
 }, 
 {timestamps:true});

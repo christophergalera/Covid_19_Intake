@@ -84,10 +84,13 @@ const AllCovid = (props) => {
 
   return (
     <div>
-      <h1>Resident Covid-19 Intake</h1>
-      <table>
+      <h2>Resident Intake</h2>
+      <table className = "table table-striped">
         <thead>
           <th>Resident Name</th>
+          <th>Phone Number</th>
+          <th>Essential Worker</th>
+          <th>Disability</th>
           <th>Actions</th>
         </thead>
         <tbody>
@@ -97,6 +100,15 @@ const AllCovid = (props) => {
               <tr key={ index }>
                 <td>
                   <Link to={"/covid/" + covid._id }>{covid.lastName + ", " + covid.firstName}</Link>
+                </td>
+                <td>
+                  {covid.phoneNumber}
+                </td>
+                <td>
+                  {covid.essentialWorker}
+                </td>
+                <td>
+                  {covid.disability}
                 </td>
                 <td>
                   <button className="editBtn" onClick={() => navigate('/covid/' + covid._id + '/edit')}>Edit</button>

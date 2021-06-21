@@ -1,6 +1,6 @@
 /* replaced the original .App class to remove centering from everything */
 .App {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -11,15 +11,20 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+h1 {
+  text-decoration: underline;
+}
+
 table {
   border-collapse: collapse;
   margin: 20px 10px;
+  text-align: center;
 }
 
 th {
   padding: 12px 0px;
   color: white;
-  background-color: #2c22b9;
+  background-color: #87CEFA;
 }
 td, th {
   border: 1px solid black;
@@ -67,9 +72,18 @@ button {
 
 .editBtn {
   color: black;
-  background-color: green;
+  background-color: #3CB371;
 }
 
+.Link {
+  margin: 0px 10px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0, 153, 255, 0.842);
+}
 /* 
 A colored Cancel button sends out the wrong signals. 
   It causes users to perceive it as a call to action instead of a fallback to safety. 
