@@ -33,6 +33,7 @@ const CovidSchema = new mongoose.Schema({
     describeEssentialWork: {
         type: String,
         enum: [
+            "N/a",
             'Military',
             'Healthcare Worker',
             'Resturant Worker',

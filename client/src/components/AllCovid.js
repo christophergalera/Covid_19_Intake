@@ -8,6 +8,7 @@ const AllCovid = (props) => {
   const [ allCovid, setAllCovid ] = useState([]);
   // this will only set the socket 1 time because it is run with a callback function
   const [ socket, setSocket ] = useState( () => io(":8000") );
+  const [ errors, setErrors ] = useState({});
 
   useEffect(() => {
     console.log("inside of useEffect for sockets");
@@ -49,40 +50,74 @@ const AllCovid = (props) => {
 
   useEffect(() => {
     // axios call the route for getAll
-    axios.get('http://localhost:8000/api/covid')
+    axios.get('http://localhost:8000/api/covid'
+    // , allCovid, 
+    // { 
+    //   withCredentials: true
+    // }
+    )
       .then((res) => {
         console.log(res.data);  // this is the body that we see in postman's results
         setAllCovid(res.data);
       })
       .catch((err) => {
-        console.log(err);
-      });
+        console.log(JSON.stringify(err));
+        console.log(err.response.status);
+        if(err.response.status === 401) {
+          console.log("you are not authorized");
+          navigate("/");
+        } else {
+          setErrors(err.response.data.errors);
+        }
+      })
 
   }, [])
+
+  // const deleteCovid = (covidId) => {
+  //   axios.delete('http://localhost:8000/api/covid/' + covidId, 
+  //   // {withCredentials: true }
+  //   )
+  //     .then((res) => {
+  //       console.log(res.data);
+
+  //       // send the covid ID since we don't need the entire object to remove this
+  //       //    from state on the other clients
+  //       socket.emit("deleted_covid", covidId);
+
+  //       let filteredCovid = allCovid.filter((oneCovid) => {
+  //         // returning true will keep the covid object in the returned array
+  //         // returning false will prevent the covid object from being in the returned array.
+  //         return oneCovid._id !== covidId;
+  //       })
+
+  //       setAllCovid(filteredCovid);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       if(err.response.status === 403 || err.response.status === 401) {
+  //         navigate('/covid/forbidden');
+  //       }
+  //       navigate('/covid');
+  //     })
+  // }
 
   const deleteCovid = (covidId) => {
     axios.delete('http://localhost:8000/api/covid/' + covidId)
       .then((res) => {
         console.log(res.data);
-
-        // send the covid ID since we don't need the entire object to remove this
-        //    from state on the other clients
         socket.emit("deleted_covid", covidId);
-
         let filteredCovid = allCovid.filter((oneCovid) => {
-          // returning true will keep the covid object in the returned array
-          // returning false will prevent the covid object from being in the returned array.
           return oneCovid._id !== covidId;
         })
 
         setAllCovid(filteredCovid);
+
       })
       .catch((err) => {
         console.log(err);
         navigate('/covid');
       })
   }
-
   return (
     <div>
       <h2>Registered Residents </h2>

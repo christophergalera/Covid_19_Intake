@@ -29,7 +29,7 @@ const server = app.listen(port, () => console.log("your server is running for co
 const io = socketio(server, {
   cors: {
     origin: 'http://localhost:3000',
-    methods: [ 'GET', 'POST' ],
+    methods: [ 'GET', 'POST' , ],
     allowedHeaders: [ '*' ],
   }
 });

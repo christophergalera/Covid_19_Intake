@@ -7,9 +7,9 @@ module.exports = function(app) {
     // get one covid document
     app.get('/api/covid/:id', CovidController.getOne)
     // create a covid document
-    app.post('/api/covid', CovidController.create)
+    app.post('/api/covid',  CovidController.create)
     // update covid document
-    app.put('/api/covid/:id', CovidController.update)
+    app.put('/api/covid/:id',  CovidController.update)
     // delete covid document
-    app.delete('/api/covid/:id', CovidController.delete)
+    app.delete('/api/covid/:id',  CovidController.delete)
 }

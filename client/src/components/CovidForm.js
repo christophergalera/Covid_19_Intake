@@ -6,7 +6,7 @@ import CovidDetails from './CovidDetails';
 const CovidForm = (props) => {
   const { submitHandler, errors, covid, setCovid, buttonLabel } = props;
 
-  const describeEssentialWork = [ "", "Military", "Healthcare Worker","Resturant Worker", "Other"];
+  const describeEssentialWork = [ "", "N/a", "Military", "Healthcare Worker","Resturant Worker", "Other"];
   const essentialWorker = ["", "Yes", "No"];
   const disability = ["", "Yes", "No"];
 

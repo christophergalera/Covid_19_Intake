@@ -23,7 +23,10 @@ const NewCovid = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:8000/api/covid', newCovid)
+    axios.post('http://localhost:8000/api/covid', newCovid, 
+      {
+        withCredentials: true
+      })
       .then((res) => {
         console.log(res.data);
 
@@ -38,6 +41,12 @@ const NewCovid = (props) => {
       .catch((err) => {
         console.log(JSON.stringify(err));
         setErrors(err.response.data.errors);
+        if(err.response.status === 401) {
+          console.log("you are not authorized");
+          navigate("/");
+        } else {
+          setErrors(err.response.data.errors);
+        }
       })
   }
 
