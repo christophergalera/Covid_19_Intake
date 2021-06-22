@@ -21,7 +21,7 @@ function App() {
     <div className="App">
     <Header user={ user } />
       <Router>
-        <LoginReg path="/covid/loginreg" user={user} setUser={setUser} />
+        <LoginReg path="/covid/loginreg"  user={user} setUser={setUser} />
         <AllCovid default user={user}/>
         <CovidDetails path="/covid/:id"/>
         <NewCovid path="/covid/new"/>

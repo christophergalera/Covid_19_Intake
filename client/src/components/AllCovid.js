@@ -50,11 +50,10 @@ const AllCovid = (props) => {
 
   useEffect(() => {
     // axios call the route for getAll
-    axios.get('http://localhost:8000/api/covid'
-    // , allCovid, 
-    // { 
-    //   withCredentials: true
-    // }
+    axios.get('http://localhost:8000/api/covid', 
+    { 
+      withCredentials: true
+    }
     )
       .then((res) => {
         console.log(res.data);  // this is the body that we see in postman's results
@@ -102,7 +101,9 @@ const AllCovid = (props) => {
   // }
 
   const deleteCovid = (covidId) => {
-    axios.delete('http://localhost:8000/api/covid/' + covidId)
+    axios.delete('http://localhost:8000/api/covid/' + covidId, {
+      withCredentials:true
+    })
       .then((res) => {
         console.log(res.data);
         socket.emit("deleted_covid", covidId);

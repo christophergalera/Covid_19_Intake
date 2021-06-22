@@ -34,7 +34,9 @@ const EditCovid = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    axios.put('http://localhost:8000/api/covid/' + id, editCovid)
+    axios.put('http://localhost:8000/api/covid/' + id, editCovid,{
+      withCredentials:true
+    })
       .then((res) => {
         console.log(res.data);
         // go to the details page when it is successful
@@ -47,7 +49,9 @@ const EditCovid = (props) => {
   }
 
   const deleteCovid = () => {
-    axios.delete('http://localhost:8000/api/covid/' + id)
+    axios.delete('http://localhost:8000/api/covid/' + id,{
+      withCredentials:true
+    })
       .then((res) => {
         console.log(res.data);
         navigate('/covid');

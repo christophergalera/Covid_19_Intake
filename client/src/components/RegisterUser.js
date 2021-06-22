@@ -26,7 +26,9 @@ const Register = props => {
     e.preventDefault();
 
     axios.post("http://localhost:8000/api/user/register", 
-      user        // the user form data is already an object with the correct keys and values!
+      user, {
+        withCredentials:true,
+      }        // the user form data is already an object with the correct keys and values!
       )
       .then(res => {
         console.log(res.data);
