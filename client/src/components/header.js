@@ -31,7 +31,7 @@ const Header = (props) => {
         <div>
         <div className= 'NavBar'>
                 <h4>County Resident Registration</h4>
-                <Link to="/covid" className= "Link">Home Page</Link>
+                <Link to="/covid" className= "Link">Dashboard</Link>
                 <Link to="/covid/new" className= "Link">Register Resident</Link>
                 <Link to="/covid/loginreg" className= "Link">Login / Register</Link>
                 <button onClick = {(e) => logout(e)} >Log Out</button>

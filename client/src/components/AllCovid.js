@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
 import io from 'socket.io-client';
+import BarChart from './BarChart'
 
 const AllCovid = (props) => {
   const [ allCovid, setAllCovid ] = useState([]);
@@ -119,6 +120,7 @@ const AllCovid = (props) => {
           }
         </tbody>
       </table>
+      <BarChart/>
     </div>
   )
 }
