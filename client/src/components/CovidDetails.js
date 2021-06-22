@@ -20,14 +20,22 @@ const CovidDetails = (props) => {
     return ( 
         <div>
             <h1>{ covid.firstName } { covid.lastName }</h1>
-            <p>First Name: {covid.firstName}</p>
-            <p>Last Name: {covid.lastName}</p>
-            <p>Address: {covid.address}</p>
-            <p>Date of Birth: {covid.dateOfBirth}</p>
+            <p>
+                First Name: {covid.firstName}
+            </p>
+            <p>
+                Last Name: {covid.lastName}
+            </p>
+            <p>
+                Address: {covid.address}
+            </p>
+            <p>
+                Date of Birth: {covid.dateOfBirth}
+            </p>
             <p>Phone Number: {covid.phoneNumber}</p>
             <p>Essential Worker: {covid.essentialWorker}</p>
             <p>Describe Essential Work: {covid.describeEssentialWork}</p>
-            <p>Disability: {covid.disability}</p>
+            <p>Disability: {covid.disablity}</p>
         </div>
     )
 }

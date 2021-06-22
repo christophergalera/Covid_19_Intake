@@ -30,11 +30,17 @@ const CovidForm = (props) => {
       <form onSubmit={submitHandler}>
         <div>
           <label>First Name</label>
-          {
+          {/* {
             // this is checking to see if the key exists inside of the errors state object
             //    if it exists, show the error, else show nothing
-            errors.firstName ? 
+            errors.fristname ? 
               <span className="error-text">  { errors.firstName.message }</span>
+              : null
+          }  */}
+          {
+            // adding frontend validation
+            covid.firstName && covid.firstName.length > 0 && covid.firstName.length < 0 ?
+              <span className="error-text">  This is a required field.</span>
               : null
           }
           <input 
@@ -46,13 +52,20 @@ const CovidForm = (props) => {
         </div>
         <div>
         <label>Last Name</label>
-          {
+          {/* {
             // this is checking to see if the key exists inside of the errors state object
             //    if it exists, show the error, else show nothing
             errors.lastName ? 
               <span className="error-text">  { errors.lastName.message }</span>
               : null
+          } */}
+          {
+            // adding frontend validation
+            covid.lastName && covid.lastName.length > 0 && covid.lastName.length < 0 ?
+              <span className="error-text">  This is a required field.</span>
+              : null
           }
+
           <input 
             type="text"
             name="lastName"
@@ -62,13 +75,20 @@ const CovidForm = (props) => {
         </div>
         <div>
           <label>Address</label>
-          {
+          {/* {
             // this is checking to see if the key exists inside of the errors state object
             //    if it exists, show the error, else show nothing
             errors.address ? 
               <span className="error-text">  { errors.address.message }</span>
               : null
+          } */}
+          {
+            // adding frontend validation
+            covid.address && covid.address.length > 0 && covid.address.length < 0 ?
+              <span className="error-text">  This is a required field.</span>
+              : null
           }
+
           <input 
             type="text"
             name="address"
@@ -78,11 +98,17 @@ const CovidForm = (props) => {
         </div>
         <div>
           <label>Date of Birth</label>
-          {
+          {/* {
             // this is checking to see if the key exists inside of the errors state object
             //    if it exists, show the error, else show nothing
             errors.dateOfBirth ? 
               <span className="error-text">  { errors.dateOfBirth.message }</span>
+              : null
+          } */}
+          {
+            // adding frontend validation
+            covid.dateOfBirth && covid.dateOfBirth.length > 0 && covid.dateOfBirth.length < 0 ?
+              <span className="error-text">  This is a required field.</span>
               : null
           }
           <input 
@@ -94,11 +120,17 @@ const CovidForm = (props) => {
         </div>
         <div>
           <label>Phone Number</label>
-          {
+          {/* {
             // this is checking to see if the key exists inside of the errors state object
             //    if it exists, show the error, else show nothing
             errors.phoneNumber ? 
               <span className="error-text">  { errors.phoneNumber.message }</span>
+              : null
+          } */}
+          {
+            // adding frontend validation
+            covid.phoneNumber && covid.phoneNumber.length > 0 && covid.phoneNumber.length < 0 ?
+              <span className="error-text">  This is a required field.</span>
               : null
           }
           <input 

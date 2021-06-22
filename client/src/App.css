@@ -4,7 +4,15 @@
   margin: auto;
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
+}
+.Link {
+  margin: 0px 10px;
+  padding: 5px 20px;
+  border-radius: 1px;
+  cursor: pointer;
+  color: black;
+  white-space: nowrap;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,15 +83,7 @@ button {
   background-color: #3CB371;
 }
 
-.Link {
-  margin: 0px 10px;
-  padding: 5px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  color: white;
-  background-color: rgba(0, 153, 255, 0.842);
-}
+
 /* 
 A colored Cancel button sends out the wrong signals. 
   It causes users to perceive it as a call to action instead of a fallback to safety. 
@@ -115,4 +115,13 @@ img {
 
 hr {
   margin: 25px;
+}
+
+.NavBar {
+  background-color: #87CEFA;
+  max-width: 1000px;
+  padding: 5px 20px;
+  display:flex;
+  justify-content: space-between;
+  white-space: nowrap;
 }

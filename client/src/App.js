@@ -8,6 +8,8 @@ import EditCovid from './components/EditCovid';
 import Header from './components/header';
 import LoginReg from './views/LoginReg';
 import Forbidden from './views/Forbidden';
+import BarChart from './components/BarChart'
+
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
         <EditCovid path="/covid/:id/edit"/>
         <Forbidden path="/heroes/forbidden" />
       </Router>
+      <BarChart />
     </div>
   );
 }

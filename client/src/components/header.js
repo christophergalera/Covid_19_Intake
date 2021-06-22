@@ -1,16 +1,45 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
+import axios from 'axios';
 
-const Header = () => {
+
+const Header = (props) => {
+    const logout = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:8000/api/user/logout", {
+        },{
+            withCredentials:true,
+        })
+        .then((res) => {
+            console.log(res.data);
+            navigate('/covid/loginreg');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    };
+
+    let username = ""; 
+    // add a space after the username if it is not an empty string
+    if (props.user.username !== "") {
+        username = props.user.username;
+    } else {
+        username = "visitor";
+    }
+
     return (
         <div>
-            <h1>County Vaccine Registration</h1>
-            <Link to="/covid" className= "Link">Home Page</Link>
-            <button><Link to="/covid/new">Register Resident</Link></button>
-            <button><Link to="/covid/loginreg">Login / Register</Link></button>
-            <button><Link to="/covid/loginreg">Log Out</Link></button>
+        <div className= 'NavBar'>
+                <h4>County Resident Registration</h4>
+                <Link to="/covid" className= "Link">Home Page</Link>
+                <Link to="/covid/new" className= "Link">Register Resident</Link>
+                <Link to="/covid/loginreg" className= "Link">Login / Register</Link>
+                <button onClick = {(e) => logout(e)} >Log Out</button>
+        </div>
+        <br/><p>Welcome { username } !</p>
         </div>
     )
 }
 
 export default Header;
+

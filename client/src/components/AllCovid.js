@@ -84,7 +84,7 @@ const AllCovid = (props) => {
 
   return (
     <div>
-      <h2>Resident Intake</h2>
+      <h2>Registered Residents </h2>
       <table className = "table table-striped">
         <thead>
           <th>Resident Name</th>

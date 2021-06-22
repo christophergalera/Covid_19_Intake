@@ -43,7 +43,7 @@ const NewCovid = (props) => {
 
   return (
     <div>
-      <h1>Register Resident</h1>
+      <h1>Register Resident Intake</h1>
       <CovidForm 
         submitHandler={ submitHandler } 
         errors={ errors } 
