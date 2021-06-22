@@ -125,3 +125,15 @@ hr {
   justify-content: space-between;
   white-space: nowrap;
 }
+
+.login{
+  border:grey;
+  border-style:solid;
+  padding: 10px;
+}
+
+.register{
+  border:grey;
+  border-style:solid;
+  padding: 10px;
+}

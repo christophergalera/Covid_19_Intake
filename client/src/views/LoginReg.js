@@ -7,9 +7,14 @@ const LoginReg = (props) => {
 
   return (
     <div>
-      <Login user={user} setUser={setUser} />
+      <div className="login">
+        <Login user={user} setUser={setUser} />
+      </div>
       <hr />
-      <RegisterUser />
+      <div className="register">
+        <RegisterUser />
+      </div>
+      
     </div>
   )
 }
