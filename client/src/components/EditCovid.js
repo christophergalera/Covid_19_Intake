@@ -20,7 +20,9 @@ const EditCovid = (props) => {
   const [ errors, setErrors ] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/covid/" + id)
+    axios.get("http://localhost:8000/api/covid/" + id, {
+      withCredentials:true
+    })
       .then((res) => {
         console.log(res.data);
         setEditCovid(res.data);

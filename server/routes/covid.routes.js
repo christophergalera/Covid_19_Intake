@@ -9,7 +9,7 @@ module.exports = function(app) {
     // create a covid document
     app.post('/api/covid',  authenticate, CovidController.create)
     // update covid document
-    app.put('/api/covid/:id',  authenticate, CovidController.update)
+    app.put('/api/covid/:id', authenticate, CovidController.update)
     // delete covid document
     app.delete('/api/covid/:id', authenticate,  CovidController.delete)
 }

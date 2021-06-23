@@ -76,7 +76,8 @@ module.exports = {
     console.log("logged out!");
     // this gets rid of the cookie from the client
     //    specifically the one that you named
-    res.clearCookie("usertoken");
+    res.clearCookie('usertoken');
     res.json({ message: "You have successfully logged out!"});
+
   }
 }

@@ -6,18 +6,19 @@ import axios from 'axios';
 const Header = (props) => {
     const logout = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/user/logout", {
-        },{
+        axios.post("http://localhost:8000/api/user/logout",{
             withCredentials:true,
         })
         .then((res) => {
             console.log(res.data);
             navigate('/covid/loginreg');
+            window.location.reload();
         })
         .catch(err => {
             console.log(err);
         });
     };
+
 
     let username = ""; 
     // add a space after the username if it is not an empty string
